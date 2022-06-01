@@ -13,8 +13,8 @@ function seleccionarPalabra(){
 }
 
 function dibujarLineas(){
-    tablero.lineWidth = 6
-    tablero.lineCap = "round"
+    tablero.lineWidth = 10;
+    tablero.lineCap = "square"
     tablero.lineJoin = "round"
     tablero.strokeStyle = "#0A3871"
     tablero.beginPath()
@@ -31,8 +31,8 @@ function dibujarLineas(){
 
 function escribirLetraCorrecta(index){
     tablero.font = 'bold 52px';
-    tablero.lineWidth = 6
-    tablero.lineCap = "round"
+    tablero.lineWidth = 10;
+    tablero.lineCap = "square"
     tablero.lineJoin = "round"
     tablero.fillStyle = "#0A3871"
 
@@ -42,7 +42,7 @@ function escribirLetraCorrecta(index){
 
 function escribirLetraIncorrecta(letra, fallos){
     tablero.font = 'bold 40px';
-    tablero.lineWidth = 6
+    tablero.lineWidth = 10
     tablero.lineCap = "round"
     tablero.lineJoin = "round"
     tablero.fillStyle = "#0A3871"
@@ -63,7 +63,7 @@ function verificarLetraCliceada(key){
 }
 
 function adicionarLetracorrecta(){
-    palabraCorrecta += palabrasSecreta[i].toUpperCase()
+    palabraCorrecta += palabrasSecreta[i].toUpperCase();
 }
 
 function adicionarLetraIncorrecta(letter){
