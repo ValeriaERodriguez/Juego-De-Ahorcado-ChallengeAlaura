@@ -4,6 +4,7 @@
     background-color: Light blue/light-blue-100
     #F3F5FC;
 }
+/*
 button{
     display: flex;
     flex-direction: row;
@@ -18,7 +19,7 @@ button{
     top: 402px;
 
     background: #0A3871;
-    border-radius: 24px;
+border-radius: 24px;
 }
 
 
@@ -30,4 +31,4 @@ button{
     text-align: center;
     margin-right: 6px;
     display: inline-block;
-}
+}*/
