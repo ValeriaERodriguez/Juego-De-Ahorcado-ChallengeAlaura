@@ -1,8 +1,9 @@
-const palabras = [mesa,playstation,casa,radio,luna];
-var palabraSelecionada = ´´;
-var concordacia = [];
-var intentos = 8
-var fallos = 0
+var palabras = ['mesa','casa','radio','luna','HTML'];
+var tablero = document.getElementById('horca').getContext('2d');
+var letras = [];
+var intentos = 7
+var palabraCorrecta = "";
+var fallos = 9;
 
 function seleccionarPalabra (palabras){
     var totalPalabras = palabras.length - 1;
