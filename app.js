@@ -50,6 +50,35 @@ function escribirLetraIncorrecta(letra, fallos){
     tablero.fillText(letra, 535+(40*(10-fallos)), 710,40)
 
 }
+
+function verificarLetraCliceada(key){
+    if (letras.length<1 || letras.indexOf(key)<0){
+        letras.push(key)
+        return false
+    }else{
+        letras.push(key)
+        return true
+    }
+
+}
+
+function adicionarLetracorrecta(){
+    palabraCorrecta += palabrasSecreta[i].toUpperCase()
+}
+
+function adicionarLetraIncorrecta(letter){
+    if (palabrasSecreta.indexOf(letter)<=0){
+        fallos -= 1
+    }
+}
+
+
+
+
+
+
+
+
 function probar(event){
     comprobarLetra(event.target.textContent);
 }
