@@ -74,23 +74,22 @@ function adicionarLetraIncorrecta(letter){
 
 
 
-
-
-
-
-
-function probar(event){
-    comprobarLetra(event.target.textContent);
-}
-
-
-
-function abc(){
-    var a = 97;
-    var z = 123;
-    var letra = document.getElementById("letras");
-
-    for(var l = a; 1 < z; l ++){
-        const char = String.fromCharCode(l);
+document.onkeydown = (e) => {
+    let letra=e.key.toUpperCase()
+    if(!verificarLetraCliceada(e.key)){
+        if(palabrasSecreta.includes(letra)){
+            console.log(letra)
+            adicionarLetracorrecta(palabrasSecreta.indexOf(letra))
+            for (let i=0;i<palabrasSecreta.length;i++){
+                if(palabrasSecreta[i]===letra){
+                    escribirLetraCorrecta(i)
+                }
+            }
+        }
+        else{
+            if(!verificarLetraCliceada(e.key)) return
+            adicionarLetraIncorrecta(letra)
+            escribirLetraIncorrecta(letra,fallos)
+        }
     }
-}
+};
