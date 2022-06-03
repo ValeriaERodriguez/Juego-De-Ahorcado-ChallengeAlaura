@@ -7,7 +7,7 @@ var fallos = 9;
 
 function seleccionarPalabra(){
     var palabra = palabras[Math.floor(Math.random()*palabras.length)]
-    palabrasSecreta = palabra
+    palabraSecreta = palabra
     console.log(palabra)
     return palabra
 }
@@ -19,8 +19,8 @@ function dibujarLineas(){
     tablero.strokeStyle = "#0A3871"
     tablero.beginPath()
 
-    var ancho = 600/palabrasSecreta.length
-    for(let i = 0; i < palabrasSecreta.length; i++){
+    var ancho = 600/palabraSecreta.length
+    for(let i = 0; i < palabraSecreta.length; i++){
         tablero.moveTo(500+(ancho*i),640)
         tablero.lineTo(500+(ancho*i),640)
     }
@@ -36,8 +36,8 @@ function escribirLetraCorrecta(index){
     tablero.lineJoin = "round"
     tablero.fillStyle = "#0A3871"
 
-    var ancho = 600/palabrasSecreta.length
-    tablero.fillText(palabrasSecreta[index], 505+(ancho*index),620)
+    var ancho = 600/palabraSecreta.length
+    tablero.fillText(palabraSecreta[index], 505+(ancho*index),620)
 }
 
 function escribirLetraIncorrecta(letra, fallos){
@@ -62,26 +62,27 @@ function verificarLetraCliceada(key){
 
 }
 
-function adicionarLetracorrecta(){
-    palabraCorrecta += palabrasSecreta[i].toUpperCase();
+function adicionarLetraCorrecta(i){
+    palabraCorrecta += palabraSecreta[i].toUpperCase();
 }
 
 function adicionarLetraIncorrecta(letter){
-    if (palabrasSecreta.indexOf(letter)<=0){
+    if (palabraSecreta.indexOf(letter)<=0){
         fallos -= 1
-    }
+       /* const imagenDeErros = general;*/
+    };
 }
 
 
 
 document.onkeydown = (e) => {
-    let letra=e.key.toUpperCase()
+    let letra=e.key.toUpperCase();
     if(!verificarLetraCliceada(e.key)){
-        if(palabrasSecreta.includes(letra)){
+        if(palabraSecreta.includes(letra)){
             console.log(letra)
-            adicionarLetracorrecta(palabrasSecreta.indexOf(letra))
-            for (let i=0;i<palabrasSecreta.length;i++){
-                if(palabrasSecreta[i]===letra){
+            adicionarLetraCorrecta(palabraSecreta.indexOf(letra))
+            for (let i=0;i<palabraSecreta.length;i++){
+                if(palabraSecreta[i]===letra){
                     escribirLetraCorrecta(i)
                 }
             }
@@ -93,3 +94,29 @@ document.onkeydown = (e) => {
         }
     }
 };
+
+function mostrarImagen(numIntentos){
+    switch (numIntentos) {
+        case 0:
+            document.getElementById("img7").style.visibility = "visible";
+            break;
+        case 1:
+            document.getElementById("img6").style.visibility = "visible";
+            break;
+        case 2:
+            document.getElementById("img5").style.visibility = "visible";
+            break;
+        case 3:
+            document.getElementById("img4").style.visibility = "visible";
+            break;
+        case 4:
+            document.getElementById("img3").style.visibility = "visible";
+            break;
+        case 5:
+            document.getElementById("img2").style.visibility = "visible";
+            break;
+        case 6:
+            document.getElementById("img1").style.visibility = "visible";
+            break;
+}
+}

@@ -4,6 +4,15 @@
     background-color: Light blue/light-blue-100
     #F3F5FC;
 }
+.figura{
+    display: flex;
+    text-align: center;
+    margin: 500px 0px 500px;
+}
+
+canvas{
+    display: flex;
+}
 /*
 button{
     display: flex;
