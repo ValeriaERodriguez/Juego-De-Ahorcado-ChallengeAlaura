@@ -3,7 +3,7 @@ var tablero = document.getElementById('horca').getContext('2d');
 var letras = [];
 var intentos = 7
 var palabraCorrecta = "";
-var fallos = 9;
+var fallos = 6;
 
 function seleccionarPalabra(){
     var palabra = palabras[Math.floor(Math.random()*palabras.length)]
@@ -31,8 +31,8 @@ function dibujarLineas(){
 
 function escribirLetraCorrecta(index){
     tablero.font = 'bold 52px';
-    tablero.lineWidth = 10;
-    tablero.lineCap = "square"
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round"
     tablero.lineJoin = "round"
     tablero.fillStyle = "#0A3871"
 
@@ -42,7 +42,7 @@ function escribirLetraCorrecta(index){
 
 function escribirLetraIncorrecta(letra, fallos){
     tablero.font = 'bold 40px';
-    tablero.lineWidth = 10
+    tablero.lineWidth = 6
     tablero.lineCap = "round"
     tablero.lineJoin = "round"
     tablero.fillStyle = "#0A3871"
@@ -69,6 +69,7 @@ function adicionarLetraCorrecta(i){
 function adicionarLetraIncorrecta(letter){
     if (palabraSecreta.indexOf(letter)<=0){
         fallos -= 1
+        console.log("Perdiste la partida");
        /* const imagenDeErros = general;*/
     };
 }
@@ -95,8 +96,8 @@ document.onkeydown = (e) => {
     }
 };
 
-function mostrarImagen(numIntentos){
-    switch (numIntentos) {
+function mostrarImagen(fallos){
+    switch (fallos) {
         case 0:
             document.getElementById("img7").style.visibility = "visible";
             break;
@@ -120,3 +121,65 @@ function mostrarImagen(numIntentos){
             break;
 }
 }
+/*
+Funcion winner(intentos):
+Con esta funcion simplemente vuelvo a ocultar las partes del ahorcado
+y muestro una con el mensaje de ganar
+*/
+function winner(){
+    document.getElementById("img7").style.visibility = "hidden";
+    document.getElementById("img6").style.visibility = "hidden";
+    document.getElementById("img5").style.visibility = "hidden";
+    document.getElementById("img4").style.visibility = "hidden";
+    document.getElementById("img3").style.visibility = "hidden";
+    document.getElementById("img2").style.visibility = "hidden";
+    document.getElementById("img1").style.visibility = "hidden";
+    document.getElementById("img8").style.visibility = "visible";
+}
+
+
+
+
+function alertaGanado(estado){
+    alert("Felicidades,ganaste!")
+}
+function alertaPerdido(palabra){
+    alert("Lo siento, perdiste.. la palabra era... "  + palabra)
+}
+nuevoJuego()
+const inicio =document.querySelector(".botones");
+const agregar=document.querySelector("#adicionar");
+const btnAgregar= document.querySelector(".agregar");
+
+
+btnAgregar.addEventListener("click",function(event){
+    event.preventDefault()
+    agregar.style.display="";
+    inicio.style.display="none";
+});
+window.addEventListener("load",()=>{
+    agregar.style.display="none";
+})
+/*let adicionar=document.querySelector("#agrega")
+adicionar.addEventListener("click",function(event){
+    event.preventDefault();
+    var form = document.querySelector("#palabra")
+let adicional= form.value
+   console.log(adicional)
+})*/
+const adicionar=document.querySelector("#agrega")
+adicionar.addEventListener("click",function (capturar){
+    capturar.preventDefault(); 
+    var tx=document.getElementById("palabra").value;
+    var tx=tx
+if (tx.length===0 || /^\s+$/.test(tx)){
+    alert("escribe una palabra")
+}
+else if(/[^A-Z ]/.test(tx)){
+    alert("solo parabras mayúsculas y sin Tilde")
+}else {
+    alert("GUARDADO") 
+    localStorage.setItem("daniel",tx);
+}
+
+})

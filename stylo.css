@@ -13,6 +13,123 @@
 canvas{
     display: flex;
 }
+
+
+
+
+.juego-section {
+    padding-top: 8em;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 25%, rgba(255, 255, 255, 0.9) 100% );
+    color: rgba(0, 0, 0, 0.6) 25%;
+}
+
+.ahorcado{
+    display: flex;
+    justify-content: center;
+    margin: 0.5em auto;
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+}    
+
+.imagen{
+    position: absolute;
+    max-width: 55%;
+}
+
+@media (min-width: 992px) {
+    .imagen {
+        max-width: 25%;
+        padding-bottom: 2em;
+    }
+}
+
+.imagen:nth-child(1){
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1;
+    margin-top: 50px;
+}
+
+.imagen:nth-child(2){
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1;
+    margin-top: 50px;
+}
+
+.imagen:nth-child(3){
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1;
+    margin-top: 50px;
+}
+
+.imagen:nth-child(4){
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1;
+    margin-top: 50px;
+}
+
+.imagen:nth-child(5){
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1;
+    margin-top: 50px;
+}
+
+.imagen:nth-child(6){
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1;
+    margin-top: 50px;
+}
+
+.imagen:nth-child(7){
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1;
+    margin-top: 50px;
+}
+
+.imagen:nth-child(8){
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1;
+    margin-top: 50px;
+}
+
+.imagen:nth-child(9){
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1;
+    margin-top: 50px;
+}
+
+#img1{
+    visibility: hidden;
+}
+#img2{
+    visibility: hidden;
+}
+#img3{
+    visibility: hidden;
+}
+#img4{
+    visibility: hidden;
+}
+#img5{
+    visibility: hidden;
+}
+#img6{
+    visibility: hidden;
+}
+#img7{
+    visibility: hidden;
+}
+#img8{
+    visibility: hidden;
+}
 /*
 button{
     display: flex;
