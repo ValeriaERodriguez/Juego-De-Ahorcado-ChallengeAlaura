@@ -36,7 +36,8 @@ function guardar(){
     sessionStorage.setItem('newPalabra',palabra);
     gameOver=false;
     location.reload();
-   
+    newGame();
+    iniciar();
    
 }
 

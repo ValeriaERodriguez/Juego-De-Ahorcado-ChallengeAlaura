@@ -12,15 +12,22 @@
 </head>
 <body>
     <header>
+        <a href="MAIN.HTML">
         <img src="img/Logo.png" alt="Logo">
-        <h1>Ahorcado</h1>
+        </a>
     </header>
     <main>
-        <img id="imagen" src="img/img0.png" alt="Ahorcado" />
+        <div class="img">
+
+            <img id="imagen" src="img/img0.png" alt="Ahorcado" />
+
+        </div>
+        
         <div>
+            <div class="guines">
             <p id="palabra_a_adivinar">
             </p>
-            <button id="jugar">Obtener palabra</button>
+        </div>
 
             <p id="resultado"></p>
 
@@ -53,6 +60,10 @@
                 <button>y</button>
                 <button>z</button>
             </div>
+        </div>
+        <div class="btn-4">
+            <button id="jugar" class="empezar">Empezar Juego</button>
+            <button id="jugar" class="desistir">Desistir</button>
         </div>
     </main>
     <script src="script.js"></script>

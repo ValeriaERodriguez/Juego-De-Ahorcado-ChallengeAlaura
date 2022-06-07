@@ -5,27 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingrese Palabra</title>
+    <link rel="stylesheet" href="estilos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&display=swap" rel="stylesheet">
 </head>
 <header>
+    <a href="MAIN.HTML">
     <img src="img/Logo.png" alt="Logo">
+    </a>
 </header>
 
 <body>
 
     <div class="input">
-        <label for="palabra-input">Ingrese Una Nueva Palabra</label>
-        <input type="text" id="txt_palabra" maxlength="8" value="Escribir">    
+        <canvas id="pantalla" width="450" height="350" aria-placeholder="Ingrese Una Nueva Palabra"></canvas>
+          
     </div>
 
+
     <div class="btn-3">
-        <input type="button" value="GuardarPalabra" onclick="guardar()">
-        <input type="button" value="Cancelar" onclick="cancelar()">
+        <button type="button" onclick="guardar()"id="GuardarPalabra"><a href="index.html">Guardar Palabra</a></button>
+        <button type="button" onclick="cancelar()" id="cancelar"><a href="MAIN.HTML">Cancelar</a></button>
 
     </div>
    
+    <script src="FUNCIONES.JS"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>

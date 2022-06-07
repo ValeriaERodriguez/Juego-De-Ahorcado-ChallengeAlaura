@@ -2,13 +2,15 @@ let palabrita;
 let cant_errores = 0; //cuantas veces me equivoqué
 let cant_aciertos = 0; //cuantas letras acerté
 
-const palabras = ['manzanas', 'Camiseta', 'caramelos', 'ñoquis', 'streamer', 'twitch', 'murciegalo','microfono'];
+const palabras = ['alura', 'programa', 'caramelos', 'pais', 'latinoamerica', 'computadora', 'mouse','teclado'];
 const btn = document.getElementById('jugar');
 const imagen = document.getElementById( 'imagen' );
 const btn_letras = document.querySelectorAll( "#letras button" );
+const boton_agregar = document.getElementById('GuardarPalabra');
 
 /* click en iniciar juego */
 btn.addEventListener('click', iniciar );
+btn_agregar.addEventListener('click',iniciar);
 
 function iniciar(event){
     imagen.src = 'img/img0.png';
