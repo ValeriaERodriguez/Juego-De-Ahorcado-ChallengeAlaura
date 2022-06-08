@@ -1,6 +1,7 @@
 body{
     margin: auto;
-    font-family: 'Carter One', Arial, Helvetica, sans-serif;
+    /*font-family: 'Carter One', Arial, Helvetica, sans-serif;*/
+    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
     background: #e9ecf8;
     position: relative;
@@ -53,7 +54,7 @@ main{
 
 #palabra_a_adivinar{
     height: 3em;
-
+/*
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,10 +65,11 @@ main{
     width: 464px;
     height: 152px;
     left: 488px;
-    top: 626px;
+    top: 626px;*/
 }
 
 #palabra_a_adivinar span{
+    /*
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,14 +81,14 @@ main{
     height: 152px;
     left: 488px;
     top: 626px;
-
+*/
     vertical-align: bottom;
     font-size: 2em;
     border-bottom: 2px solid black;
     width: 30px;
     text-align: center;
     margin-right: 6px;
-    display: inline-block; /* sin esto, por ser un elemento de línea, no tomaría el width */
+    display: inline-block; 
 }
 
 #letras{
@@ -110,6 +112,23 @@ main{
 	display: inline-block;
 
 }
+
+#aclaracion-maximo-letras{
+    
+    position: absolute;
+    left: 400px;
+    top: 650px;
+    font-weight: 500;
+    color: #000B49;
+    height: 30px;
+    width: 320px;
+    padding: 0px;
+
+}
+#aclaracion-maximo-letras::before {
+    margin-right: 8px;
+
+  }
 
 .inicio{
     height: 114px;
@@ -256,7 +275,7 @@ a{
 
 }
 footer{
-    background-color: darkslateblue;
+    background-color: #757FB2;
     color: aliceblue;
     position: absolute;
     top: 100%;
