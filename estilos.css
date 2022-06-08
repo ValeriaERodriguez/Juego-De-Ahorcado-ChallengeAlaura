@@ -1,6 +1,7 @@
 body{
     margin: auto;
-    font-family: 'Carter One', Arial, Helvetica, sans-serif;
+    /*font-family: 'Carter One', Arial, Helvetica, sans-serif;*/
+    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
     background: #e9ecf8;
     position: relative;
@@ -28,29 +29,17 @@ main{
     display: flex;
     gap: 30px;
 }
-/*
-#imagen{
-    justify-content: center;
-    display: block;
-    margin: 0px auto;
-    width: 200px;
-}*/
+
 .img{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     padding: 0px;
     gap: 24px;    
     position: absolute;
-    width: 464px;
-    height: 152px;
     left: 488px;
-    top: 626px;
+    top: 200px;
     margin: 0px auto;
 }
 .guiones{
-    display: flex;
+    
     flex-direction: column;
     align-items: center;
     padding: 0px;
@@ -65,7 +54,7 @@ main{
 
 #palabra_a_adivinar{
     height: 3em;
-
+/*
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,10 +65,11 @@ main{
     width: 464px;
     height: 152px;
     left: 488px;
-    top: 626px;
+    top: 626px;*/
 }
 
 #palabra_a_adivinar span{
+    /*
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,18 +81,18 @@ main{
     height: 152px;
     left: 488px;
     top: 626px;
-
+*/
     vertical-align: bottom;
     font-size: 2em;
     border-bottom: 2px solid black;
     width: 30px;
     text-align: center;
     margin-right: 6px;
-    display: inline-block; /* sin esto, por ser un elemento de línea, no tomaría el width */
+    display: inline-block; 
 }
 
 #letras{
-    margin-top: 30px;
+    
     display: flex;
     flex-wrap: wrap;
     gap: 9px;
@@ -113,27 +103,86 @@ main{
     padding: 6px 0;
     text-align: center;
 }
-.inicio #pantalla{
+.wrongWord{
+	display: inline-flex;
+	margin: 1% auto;
+	justify-content: center;
+}
+.wrongLetter{
+	display: inline-block;
+
+}
+
+
+
+
+#palabra-secreta-a-agregar{
+    background-color: #E5E5E5;
+    position: absolute;
+    border: none;
+    width: 700px;
+    height: 300px;
+    left: 40px;
+    top: 150px;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0A3871;
+
+}
+
+#palabra-secreta-a-agregar::placeholder{
+    background-color: inherit;
+    color: #000B49;
+
+}
+
+
+
+
+
+
+
+
+#aclaracion-maximo-letras{
+    
+    position: absolute;
+    left: 400px;
+    top: 650px;
+    font-weight: 500;
+    color: #000B49;
+    height: 30px;
+    width: 320px;
+    padding: 0px;
+
+}
+
+#aclaracion-maximo-letras::before {
+    margin-right: 8px;
+
+  }
+
+.inicio{
     height: 114px;
     width: 317px;
     left: 561px;
     top: 402px;
     border-radius: 24px;
-    padding: 24px;
+    padding: 45px;
     text-align: center;
     background: #0A3871;
-    
-    
-    display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 8px;
     position: absolute;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: #ffffff;
-    flex: none;
     order: 0;
     flex-grow: 1;
+    font-size: 20px;
 
 }
 .agregar-plb {
@@ -141,17 +190,15 @@ main{
     width: 280px;
     left: 579px;
     top: 554px;
-    border-radius: 24px;
     padding: 24px;
     color: #0A3871;
-    display: flex;
     flex-direction: row;
-    align-items: flex-start;
     gap: 8px;
     position: absolute;
     border: 1px solid #0A3871;
     border-radius: 24px;
     align-items: center;
+    font-size: 15px;
 
 }
 
@@ -191,7 +238,7 @@ a{
 }
 
 #GuardarPalabra{
-    display: flex;
+    
     flex-direction: row;
     align-items: flex-start;
     padding: 24px;
@@ -201,13 +248,13 @@ a{
     color:#ffffff;
     background: #0A3871;
     border-radius: 24px;
-    flex: none;
     order: 0;
     flex-grow: 1;
+    font-size: 15px;
 }
 #cancelar{
     box-sizing: border-box;
-    display: flex;
+    
     flex-direction: row;
     align-items: flex-start;
     padding: 24px;
@@ -217,9 +264,9 @@ a{
     color: #0A3871;
     border: 1px solid #0A3871;
     border-radius: 24px;
-    flex: none;
     order: 1;
     flex-grow: 1;
+    font-size: 15px;
 }
 
 .btn-4{
@@ -228,7 +275,6 @@ a{
     align-items: flex-start;
     padding: 0px;
     gap: 24px;
-
     position: absolute;
     width: 688px;
     height: 67px;
@@ -237,47 +283,34 @@ a{
 }
 
 .empezar{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
+    
+    padding: 20px;
     gap: 8px;
     width: 332px;
     height: 67px;
     background: #0A3871;
     border-radius: 24px;
-    flex: none;
     order: 0;
     flex-grow: 1;
+    color: #ffffff;
+    font-size: 20px;
 }
 .desistir{
     box-sizing: border-box;
-
-/* Auto layout */
-
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
+    padding: 20px;
     gap: 8px;
-
     width: 332px;
     height: 67px;
-
-/* Dark blue/dark-blue-300 */
-
     border: 1px solid #0A3871;
     border-radius: 24px;
-
-/* Inside auto layout */
-
-    flex: none;
     order: 1;
     flex-grow: 1;
+    color: #0A3871;
+    font-size: 20px;
 
 }
 footer{
-    background-color: darkslateblue;
+    background-color: #757FB2;
     color: aliceblue;
     position: absolute;
     top: 100%;
@@ -285,6 +318,7 @@ footer{
     text-align: center;
     font-weight: bold;
     margin-top: 25px;
+    
     padding: 3%;
 
     display: flex;
