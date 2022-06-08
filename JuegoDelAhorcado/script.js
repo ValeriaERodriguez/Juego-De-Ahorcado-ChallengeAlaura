@@ -8,6 +8,8 @@ const imagen = document.getElementById( 'imagen' );
 const btn_letras = document.querySelectorAll( "#letras button" );
 const boton_agregar = document.getElementById('GuardarPalabra');
 var wLetters = []; //almacena las letras incorrectas
+var inputAgregarPalabra = document.querySelector("#input_agregar_palabra");
+var letrasErradas = [];
 
 /* click en iniciar juego */
 btn.addEventListener('click', iniciar );
@@ -86,6 +88,50 @@ function mostrarerror(){
         destapar(ahorcado[intentos+3-restaintentos]);
         restaintentos--;
     }
+}
+
+function agregarPalabraSecreta(){ //funcion para agregar palabras para adivinar al juego.
+    
+    palabraNueva = inputAgregarPalabra.value;
+    if (palabraNueva == ""){
+        alert("No ingresó ninguna palabra. Vuelva a intentar.")
+        inputAgregarPalabra.focus();
+        return;
+        juegoHabilitado = false;
+    }else if(palabraNueva.length > 8){
+        alert("El máximo permitido son 8 letras.");
+        inputAgregarPalabra.value = "";
+        inputAgregarPalabra.focus();
+        juegoHabilitado=false;
+        return;
+    }else{
+        for(posicion = 0; posicion < palabraNueva.length; posicion++){
+            if (palabraNueva[posicion].charCodeAt() < 65 || palabraNueva[posicion].charCodeAt() > 90){       
+                alert("La palabra contiene caracteres no válidos. Vuelva a intentar.");
+                inputAgregarPalabra.value = "";
+                inputAgregarPalabra.focus();
+                juegoHabilitado = false;
+                return;
+            }else{
+                juegoHabilitado = true;
+            } 
+        }
+    }
+    if (juegoHabilitado){ //desde acá se verifica si la palabra ingresada ya existe.
+        var repetida = false;
+        for(var posicion = 0; posicion < palabrasSecretas.length; posicion++){
+            if (palabraNueva == palabrasSecretas[posicion]){
+                alert("La palabra '" + palabraNueva + "' ya fue elegida");
+                repetida = true;
+                break;
+            }
+        }
+            if (repetida==false){
+                palabrasSecretas.push(palabraNueva);
+            }
+    }    
+    inputAgregarPalabra.value="";
+    empezarJuego();
 }
 
 
