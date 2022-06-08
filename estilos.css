@@ -1,6 +1,5 @@
 body{
     margin: auto;
-    /*font-family: 'Carter One', Arial, Helvetica, sans-serif;*/
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
     background: #e9ecf8;
@@ -117,12 +116,12 @@ main{
 
 
 #palabra-secreta-a-agregar{
-    background-color: #E5E5E5;
+    background: #e9ecf8;
     position: absolute;
     border: none;
     width: 700px;
     height: 300px;
-    left: 40px;
+    left: 400px;
     top: 150px;
     outline: none;
     font-family: 'Inter', sans-serif;
